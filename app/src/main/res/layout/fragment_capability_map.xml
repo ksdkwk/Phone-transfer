@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 能力地图：表格由 CapabilityMapFragment 依据 CapabilityMatrix 动态生成，避免机型分支写死在布局里 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_l"
+        android:paddingTop="@dimen/pt_space_l"
+        android:paddingEnd="@dimen/pt_space_l"
+        android:paddingBottom="@dimen/pt_space_xl">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/capability_title"
+            style="@style/PTPageTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/capability_note"
+            style="@style/PTBody" />
+
+        <LinearLayout
+            android:id="@+id/capability_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+</ScrollView>

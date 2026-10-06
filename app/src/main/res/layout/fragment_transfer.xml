@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  「换机」功能区：按需求，当前为一片大部分空白的功能区，功能待定。
+  该区域预留给换机主流程（见 README「换机功能区预留」一节）。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transfer_function_area"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_xxl"
+        android:paddingEnd="@dimen/pt_space_xxl">
+
+        <TextView
+            android:id="@+id/transfer_placeholder_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer_placeholder_hint"
+            android:textColor="@color/pt_text_secondary"
+            android:textSize="@dimen/pt_text_page_title" />
+
+        <TextView
+            android:id="@+id/transfer_placeholder_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_m"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.35"
+            android:text="@string/transfer_placeholder_desc"
+            android:textColor="@color/pt_text_disabled"
+            android:textSize="@dimen/pt_text_desc" />
+    </LinearLayout>
+
+</FrameLayout>

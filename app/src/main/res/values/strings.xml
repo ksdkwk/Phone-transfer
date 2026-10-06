@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Phone-transfer 文案（默认中文）。
+     文案与《可行性设计文档》的能力边界保持一致：不可迁移项必须明确告知，不做虚假承诺。 -->
+<resources>
+    <string name="app_name">换机助手</string>
+
+    <!-- 底部功能选项 -->
+    <string name="tab_transfer">换机</string>
+    <string name="tab_mine">我的</string>
+
+    <!-- 换机功能区（顶层空白区域，功能待定） -->
+    <string name="transfer_placeholder_hint">功能待定</string>
+    <string name="transfer_placeholder_desc">该区域预留给换机主流程：设备发现 → 配对（配对码 / 短认证串 SAS）→ 数据项选择 → 加密分块传输 → 校验与迁移报告</string>
+
+    <!-- 我的 -->
+    <string name="mine_header_title">本机信息</string>
+    <string name="mine_header_device">%1$s %2$s</string>
+    <string name="mine_header_os">Android %1$s（API %2$d）</string>
+    <string name="mine_header_role">换机时本机可选择为旧机（发送端）或新机（接收端）</string>
+    <string name="mine_capability_map">能力地图</string>
+    <string name="mine_capability_map_desc">按两端机型查看各数据项的可迁移程度</string>
+    <string name="mine_report">迁移报告</string>
+    <string name="mine_report_desc">成功 / 失败 / 跳过明细，可导出</string>
+    <string name="mine_settings">传输设置</string>
+    <string name="mine_settings_desc">冲突策略、EXIF 位置、限速与敏感数据项</string>
+    <string name="mine_privacy">权限与隐私</string>
+    <string name="mine_privacy_desc">权限用途、数据不出端与密钥销毁说明</string>
+    <string name="mine_about">关于</string>
+    <string name="mine_about_desc">版本信息、协议版本与实现依据</string>
+
+    <!-- 能力地图 -->
+    <string name="capability_title">能力地图</string>
+    <string name="capability_note">下表为设计基线；实际迁移能力以两端「能力探测」的实测结果为准（协议规范 §11）。</string>
+    <string name="capability_col_scenario">使用场景</string>
+    <string name="capability_col_aa">A→A</string>
+    <string name="capability_col_a2ios">A→iOS</string>
+    <string name="capability_col_ios2a">iOS→A</string>
+    <string name="capability_col_ios2ios">iOS→iOS</string>
+    <string name="capability_legend">图例</string>
+
+    <!-- 支持度（协议规范 §7.6 T_ITEM_SUPPORT） -->
+    <string name="support_0">不支持</string>
+    <string name="support_1">支持</string>
+    <string name="support_2">部分支持</string>
+    <string name="support_3">需额外授权</string>
+
+    <!-- 敏感度分级（可行性文档 §7.2） -->
+    <string name="sensitivity_1">L1 低敏感</string>
+    <string name="sensitivity_2">L2 一般</string>
+    <string name="sensitivity_3">L3 高敏感</string>
+    <string name="sensitivity_4">L4 极高敏感</string>
+
+    <!-- 数据项（协议规范 §7.7 ITEM_TYPE） -->
+    <string name="item_1">联系人</string>
+    <string name="item_2">短信</string>
+    <string name="item_3">彩信</string>
+    <string name="item_4">通话记录</string>
+    <string name="item_5">照片</string>
+    <string name="item_6">视频</string>
+    <string name="item_7">音频</string>
+    <string name="item_8">文档</string>
+    <string name="item_9">日历</string>
+    <string name="item_10">提醒事项</string>
+    <string name="item_11">备忘录</string>
+    <string name="item_12">应用清单</string>
+    <string name="item_13">安装包</string>
+    <string name="item_14">应用数据</string>
+    <string name="item_15">壁纸</string>
+    <string name="item_16">闹钟</string>
+    <string name="item_17">Wi-Fi 配置</string>
+    <string name="item_18">浏览器书签</string>
+    <string name="item_19">其他</string>
+
+    <!-- 传输设置 -->
+    <string name="settings_title">传输设置</string>
+    <string name="settings_conflict_section">同名文件冲突策略</string>
+    <string name="settings_conflict_rename">重命名（追加 (1)）</string>
+    <string name="settings_conflict_skip">跳过</string>
+    <string name="settings_conflict_overwrite">覆盖</string>
+    <string name="settings_conflict_merge">合并（联系人按「姓名 + 号码」去重）</string>
+    <string name="settings_sensitive_section">隐私相关开关</string>
+    <string name="settings_exif_title">保留照片 EXIF 位置信息</string>
+    <string name="settings_exif_desc">默认关闭；开启后经纬度会随照片一并迁移（L3 高敏感）</string>
+    <string name="settings_l4_title">允许迁移 L4 极高敏感数据项</string>
+    <string name="settings_l4_desc">短信、彩信、通话记录、应用数据；每一项仍需单独同意</string>
+    <string name="settings_throttle_title">温升自动限速</string>
+    <string name="settings_throttle_desc">长时间传输时自动降速，避免设备过热（协议规范 §12.2）</string>
+    <string name="settings_saved">设置已保存</string>
+
+    <!-- 页面通用 -->
+    <string name="common_back">返回</string>
+    <string name="page_report_title">迁移报告</string>
+    <string name="page_report_empty">还没有迁移记录。\n\n完成一次换机后，这里会按数据项列出成功 / 失败 / 跳过的数量、整体校验（SHA-256 清单比对）结果与耗时，并可导出为迁移报告。</string>
+    <string name="page_privacy_title">权限与隐私</string>
+    <string name="page_about_title">关于</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_protocol">传输协议 v1（ProtocolVersion = 1，默认端口 45717）</string>
+    <string name="about_crypto">端到端加密：ECDH P-256 + HKDF-SHA256 + AES-256-GCM</string>
+    <string name="about_no_cloud">数据不出端：默认不经任何服务器，无云端副本</string>
+    <string name="about_spec">实现依据：《Phone-transfer 可行性设计文档》《Phone-transfer 传输协议规范 v1》《Phone-transfer PoC 验证方案》。</string>
+
+    <string name="privacy_body">换机助手只在你的两部手机之间直接传输数据，默认不经任何服务器。\n\n1. 权限最小必要：只有你勾选某个数据项时才会申请对应权限；未勾选的数据项不会申请任何权限。\n\n2. 数据不出端：传输内容使用 AES-256-GCM 端到端加密，第三方抓包只能看到密文；没有云端副本。\n\n3. 密钥生命周期：会话密钥只存在于内存中，退后台超时、会话结束或你取消时立即销毁；不落盘、不参与云备份。\n\n4. 单独同意：短信、彩信、通话记录、应用数据属于 L4 极高敏感，必须逐项单独同意后才会迁移。\n\n5. 用完即释：临时缓存位于应用私有目录，会话结束后立即擦除。\n\n6. 日志脱敏：只记录行为与错误码，不含任何内容数据。\n\n7. 不采集硬件标识：会话 ID 为每次会话随机生成，不使用 IMEI / 序列号等硬件标识符。\n\n8. 能力边界诚实告知：iOS 侧无法通过 App 读取短信、通话记录、备忘录与应用数据；这类数据项会在「能力地图」中明确标注为不支持，并给出替代引导。</string>
+</resources>

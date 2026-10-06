@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 传输设置：默认值与协议规范 §7.6 T_CONFLICT_POLICY、T_INCLUDE_EXIF_LOCATION 对齐 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/pt_space_xl">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/pt_space_l"
+            android:paddingTop="@dimen/pt_space_l"
+            android:paddingEnd="@dimen/pt_space_l"
+            android:text="@string/settings_title"
+            style="@style/PTPageTitle" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_conflict_section"
+            style="@style/PTSectionHeader" />
+
+        <RadioGroup
+            android:id="@+id/settings_conflict_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pt_space_l"
+            android:layout_marginEnd="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_s">
+
+            <RadioButton
+                android:id="@+id/settings_conflict_rename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_conflict_rename" />
+
+            <RadioButton
+                android:id="@+id/settings_conflict_skip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_conflict_skip" />
+
+            <RadioButton
+                android:id="@+id/settings_conflict_overwrite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_conflict_overwrite" />
+
+            <RadioButton
+                android:id="@+id/settings_conflict_merge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/settings_conflict_merge" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_sensitive_section"
+            style="@style/PTSectionHeader" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pt_space_l"
+            android:layout_marginEnd="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_exif_title"
+                style="@style/PTRowTitle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_exif_desc"
+                style="@style/PTRowDesc" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/settings_exif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginTop="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_l"
+                android:text="@string/settings_l4_title"
+                style="@style/PTRowTitle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_l4_desc"
+                style="@style/PTRowDesc" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/settings_l4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginTop="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_l"
+                android:text="@string/settings_throttle_title"
+                style="@style/PTRowTitle" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_throttle_desc"
+                style="@style/PTRowDesc" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/settings_throttle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

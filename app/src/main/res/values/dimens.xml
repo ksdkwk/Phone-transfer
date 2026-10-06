@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pt_space_xs">4dp</dimen>
+    <dimen name="pt_space_s">8dp</dimen>
+    <dimen name="pt_space_m">12dp</dimen>
+    <dimen name="pt_space_l">16dp</dimen>
+    <dimen name="pt_space_xl">24dp</dimen>
+    <dimen name="pt_space_xxl">32dp</dimen>
+
+    <dimen name="pt_radius_card">14dp</dimen>
+    <dimen name="pt_radius_chip">10dp</dimen>
+    <dimen name="pt_stroke">1dp</dimen>
+
+    <dimen name="pt_text_page_title">18sp</dimen>
+    <dimen name="pt_text_row_title">16sp</dimen>
+    <dimen name="pt_text_body">14sp</dimen>
+    <dimen name="pt_text_desc">12sp</dimen>
+    <dimen name="pt_text_section">13sp</dimen>
+    <dimen name="pt_chevron_size">20dp</dimen>
+</resources>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 「我的」页：本机信息 + 功能入口（能力地图 / 迁移报告 / 传输设置 / 权限与隐私 / 关于） -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/pt_space_xl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pt_space_l"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:layout_marginEnd="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mine_header_title"
+                style="@style/PTSectionHeader"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:paddingTop="0dp" />
+
+            <TextView
+                android:id="@+id/mine_device_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pt_text_primary"
+                android:textSize="@dimen/pt_text_row_title"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/mine_device_os"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_xs"
+                style="@style/PTRowDesc" />
+
+            <TextView
+                android:id="@+id/mine_device_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:text="@string/mine_header_role"
+                style="@style/PTBody" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pt_space_l"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:layout_marginEnd="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row_capability_map"
+                style="@style/PTRow">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_capability_map"
+                        style="@style/PTRowTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_capability_map_desc"
+                        style="@style/PTRowDesc" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/PTRowChevron"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginStart="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <LinearLayout
+                android:id="@+id/row_report"
+                style="@style/PTRow">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_report"
+                        style="@style/PTRowTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_report_desc"
+                        style="@style/PTRowDesc" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/PTRowChevron"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginStart="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <LinearLayout
+                android:id="@+id/row_settings"
+                style="@style/PTRow">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_settings"
+                        style="@style/PTRowTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_settings_desc"
+                        style="@style/PTRowDesc" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/PTRowChevron"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginStart="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <LinearLayout
+                android:id="@+id/row_privacy"
+                style="@style/PTRow">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_privacy"
+                        style="@style/PTRowTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_privacy_desc"
+                        style="@style/PTRowDesc" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/PTRowChevron"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/pt_stroke"
+                android:layout_marginStart="@dimen/pt_space_l"
+                android:background="@color/pt_divider" />
+
+            <LinearLayout
+                android:id="@+id/row_about"
+                style="@style/PTRow">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_about"
+                        style="@style/PTRowTitle" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mine_about_desc"
+                        style="@style/PTRowDesc" />
+                </LinearLayout>
+
+                <ImageView
+                    style="@style/PTRowChevron"
+                    android:contentDescription="@null" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:gravity="center"
+            android:paddingStart="@dimen/pt_space_xl"
+            android:paddingEnd="@dimen/pt_space_xl"
+            android:text="@string/about_no_cloud"
+            style="@style/PTBody" />
+    </LinearLayout>
+
+</ScrollView>

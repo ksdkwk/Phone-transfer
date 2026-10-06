@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      应用主题：Material 3 DayNight，无 ActionBar。
+      单 Activity + Fragment 结构，底部功能选项使用 BottomNavigationView。
+      没有闪屏主题（无 SplashTheme），启动即进入主界面。
+    -->
+    <style name="Theme.PhoneTransfer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pt_primary</item>
+        <item name="colorOnPrimary">@color/pt_on_primary</item>
+        <item name="colorPrimaryContainer">@color/pt_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/pt_on_primary_container</item>
+        <item name="colorSurface">@color/pt_surface</item>
+        <item name="colorOnSurface">@color/pt_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/pt_text_secondary</item>
+        <item name="colorOutline">@color/pt_divider</item>
+        <item name="android:colorBackground">@color/pt_background</item>
+    </style>
+
+    <style name="PTScreen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/pt_background</item>
+    </style>
+
+    <style name="PTPageTitle">
+        <item name="android:textSize">@dimen/pt_text_page_title</item>
+        <item name="android:textColor">@color/pt_text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PTSectionHeader">
+        <item name="android:textSize">@dimen/pt_text_section</item>
+        <item name="android:textColor">@color/pt_text_secondary</item>
+        <item name="android:paddingStart">@dimen/pt_space_l</item>
+        <item name="android:paddingEnd">@dimen/pt_space_l</item>
+        <item name="android:paddingTop">@dimen/pt_space_l</item>
+        <item name="android:paddingBottom">@dimen/pt_space_s</item>
+    </style>
+
+    <style name="PTBody">
+        <item name="android:textSize">@dimen/pt_text_body</item>
+        <item name="android:textColor">@color/pt_text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.35</item>
+    </style>
+
+    <!-- 「我的」页的功能行：整行可点击 -->
+    <style name="PTRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingStart">@dimen/pt_space_l</item>
+        <item name="android:paddingEnd">@dimen/pt_space_l</item>
+        <item name="android:paddingTop">@dimen/pt_space_m</item>
+        <item name="android:paddingBottom">@dimen/pt_space_m</item>
+    </style>
+
+    <style name="PTRowTitle">
+        <item name="android:textSize">@dimen/pt_text_row_title</item>
+        <item name="android:textColor">@color/pt_text_primary</item>
+    </style>
+
+    <style name="PTRowDesc">
+        <item name="android:textSize">@dimen/pt_text_desc</item>
+        <item name="android:textColor">@color/pt_text_secondary</item>
+        <item name="android:paddingTop">2dp</item>
+    </style>
+
+    <style name="PTRowChevron">
+        <item name="android:layout_width">@dimen/pt_chevron_size</item>
+        <item name="android:layout_height">@dimen/pt_chevron_size</item>
+        <item name="android:layout_marginStart">@dimen/pt_space_m</item>
+        <item name="android:src">@drawable/ic_chevron_right</item>
+        <item name="android:alpha">0.55</item>
+    </style>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Phone-transfer</string>
+
+    <string name="tab_transfer">Transfer</string>
+    <string name="tab_mine">Mine</string>
+
+    <string name="transfer_placeholder_hint">To be defined</string>
+    <string name="transfer_placeholder_desc">This area is reserved for the transfer flow: discovery → pairing (code / SAS) → item selection → encrypted chunked transfer → verification and report.</string>
+
+    <string name="mine_header_title">This device</string>
+    <string name="mine_header_device">%1$s %2$s</string>
+    <string name="mine_header_os">Android %1$s (API %2$d)</string>
+    <string name="mine_header_role">During a transfer this device can act as the old phone (sender) or the new phone (receiver).</string>
+    <string name="mine_capability_map">Capability map</string>
+    <string name="mine_capability_map_desc">See what can be migrated for each device combination</string>
+    <string name="mine_report">Transfer report</string>
+    <string name="mine_report_desc">Succeeded / failed / skipped details, exportable</string>
+    <string name="mine_settings">Transfer settings</string>
+    <string name="mine_settings_desc">Conflict policy, EXIF location, throttling, sensitive items</string>
+    <string name="mine_privacy">Permissions &amp; privacy</string>
+    <string name="mine_privacy_desc">Why permissions are needed, no-cloud and key-destruction policy</string>
+    <string name="mine_about">About</string>
+    <string name="mine_about_desc">Version, protocol version and references</string>
+
+    <string name="capability_title">Capability map</string>
+    <string name="capability_note">This table is the design baseline. Actual capability is decided by the measured capability negotiation between the two devices.</string>
+    <string name="capability_col_scenario">Scenario</string>
+    <string name="capability_col_aa">A→A</string>
+    <string name="capability_col_a2ios">A→iOS</string>
+    <string name="capability_col_ios2a">iOS→A</string>
+    <string name="capability_col_ios2ios">iOS→iOS</string>
+    <string name="capability_legend">Legend</string>
+
+    <string name="support_0">Not supported</string>
+    <string name="support_1">Supported</string>
+    <string name="support_2">Partial</string>
+    <string name="support_3">Extra grant needed</string>
+
+    <string name="sensitivity_1">L1 Low</string>
+    <string name="sensitivity_2">L2 Normal</string>
+    <string name="sensitivity_3">L3 High</string>
+    <string name="sensitivity_4">L4 Critical</string>
+
+    <string name="item_1">Contacts</string>
+    <string name="item_2">SMS</string>
+    <string name="item_3">MMS</string>
+    <string name="item_4">Call log</string>
+    <string name="item_5">Photos</string>
+    <string name="item_6">Videos</string>
+    <string name="item_7">Audio</string>
+    <string name="item_8">Documents</string>
+    <string name="item_9">Calendar</string>
+    <string name="item_10">Reminders</string>
+    <string name="item_11">Notes</string>
+    <string name="item_12">App list</string>
+    <string name="item_13">APK</string>
+    <string name="item_14">App data</string>
+    <string name="item_15">Wallpaper</string>
+    <string name="item_16">Alarms</string>
+    <string name="item_17">Wi-Fi config</string>
+    <string name="item_18">Bookmarks</string>
+    <string name="item_19">Other</string>
+
+    <string name="settings_title">Transfer settings</string>
+    <string name="settings_conflict_section">Conflict policy for same-name files</string>
+    <string name="settings_conflict_rename">Rename (append (1))</string>
+    <string name="settings_conflict_skip">Skip</string>
+    <string name="settings_conflict_overwrite">Overwrite</string>
+    <string name="settings_conflict_merge">Merge (dedupe contacts by name + number)</string>
+    <string name="settings_sensitive_section">Privacy switches</string>
+    <string name="settings_exif_title">Keep photo EXIF location</string>
+    <string name="settings_exif_desc">Off by default; when on, GPS coordinates travel with the photo (L3 High)</string>
+    <string name="settings_l4_title">Allow L4 critical items</string>
+    <string name="settings_l4_desc">SMS, MMS, call log, app data. Each item still requires separate consent.</string>
+    <string name="settings_throttle_title">Thermal throttling</string>
+    <string name="settings_throttle_desc">Slow down automatically during long transfers to avoid overheating</string>
+    <string name="settings_saved">Settings saved</string>
+
+    <string name="common_back">Back</string>
+    <string name="page_report_title">Transfer report</string>
+    <string name="page_report_empty">No transfer has run yet.\n\nAfter a transfer, this page lists per-item succeeded / failed / skipped counts together with the SHA-256 verification result and duration, and can be exported.</string>
+    <string name="page_privacy_title">Permissions &amp; privacy</string>
+    <string name="page_about_title">About</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_protocol">Protocol v1 (ProtocolVersion = 1, default port 45717)</string>
+    <string name="about_crypto">End-to-end encryption: ECDH P-256 + HKDF-SHA256 + AES-256-GCM</string>
+    <string name="about_no_cloud">No data leaves the devices: no server, no cloud copy</string>
+    <string name="about_spec">Implements the Phone-transfer feasibility design, protocol specification v1 and PoC plan.</string>
+
+    <string name="privacy_body">Phone-transfer transfers data directly between your two phones and never goes through a server by default.\n\n1. Least privilege: a permission is requested only when you select the matching data item; nothing is requested for items you did not select.\n\n2. No data leaves the devices: payloads are protected with AES-256-GCM end-to-end encryption; a packet capture only shows ciphertext.\n\n3. Key lifecycle: session keys live in memory only and are destroyed on timeout, session end or cancellation. They are never written to disk and never backed up.\n\n4. Separate consent: SMS, MMS, call log and app data are L4 critical and require individual consent.\n\n5. Cleanup: temporary caches live in the app private directory and are wiped when the session ends.\n\n6. Redacted logs: only actions and error codes are logged, never content.\n\n7. No hardware identifiers: the session id is random per session; IMEI / serial numbers are never used.\n\n8. Honest limits: iOS apps cannot read SMS, call log, notes or app data. Those items are marked unsupported in the capability map with an alternative path.</string>
+</resources>

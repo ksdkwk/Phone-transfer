@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ============ 通道与网络（协议规范 §3 L1 通道层）============ -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="33" />
+    <!-- Wi-Fi Direct 扫描在 Android 12 及以下需要定位权限 -->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="32" />
+
+    <!-- ============ 长时传输的前台服务与通知（可行性文档 §6.6）============ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- ============ 数据项读取权限（按需申请，未勾选的数据项不得申请：协议 §11）============ -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!-- Android → Android 的 APK 安装引导（可行性文档 FR-10） -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!--
+      短信 / 彩信权限与「临时默认短信应用」组件属于 V1.1 范围（可行性文档 §9.1、PoC P3）。
+      在实现该模块之前**不声明** READ_SMS / WRITE_SMS / RECEIVE_SMS / SEND_SMS，
+      以符合权限最小必要与商店审核要求（可行性文档 §7.3）。
+    -->
+
+    <uses-feature android:name="android.hardware.wifi" android:required="true" />
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+
+    <!-- 应用清单采集只查询「启动器可见」范围，不使用 QUERY_ALL_PACKAGES（§4.1） -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".PhoneTransferApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PhoneTransfer"
+        android:usesCleartextTraffic="false">
+
+        <!--
+          启动即主界面：只有一个 Activity，没有闪屏页、没有引导页、没有登录页，
+          也不在启动时索取任何权限（权限在使用场景中按需申请，可行性文档 §6.7）。
+        -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.PhoneTransfer"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

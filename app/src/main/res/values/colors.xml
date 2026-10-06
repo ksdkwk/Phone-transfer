@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pt_primary">#2F6BFF</color>
+    <color name="pt_on_primary">#FFFFFFFF</color>
+    <color name="pt_primary_container">#E3ECFF</color>
+    <color name="pt_on_primary_container">#10265C</color>
+
+    <color name="pt_background">#F5F6F8</color>
+    <color name="pt_surface">#FFFFFFFF</color>
+    <color name="pt_surface_variant">#F0F2F5</color>
+    <color name="pt_divider">#E4E6EB</color>
+
+    <color name="pt_text_primary">#1A1B1E</color>
+    <color name="pt_text_secondary">#6B7280</color>
+    <color name="pt_text_disabled">#9CA3AF</color>
+
+    <color name="pt_success">#12A150</color>
+    <color name="pt_warning">#D98A0B</color>
+    <color name="pt_danger">#E5484D</color>
+
+    <color name="ic_launcher_background">#2F6BFF</color>
+</resources>

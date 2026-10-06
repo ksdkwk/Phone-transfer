@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  主界面骨架：
+    · 上半部分（layout_weight = 1）为功能区容器，启动后由「换机」页占据，默认为一片空白区域；
+    · 下半部分为功能选项，只有「换机」「我的」两个入口。
+  没有闪屏页：Activity 创建后立即显示本布局。
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pt_background"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pt_stroke"
+        android:background="@color/pt_divider" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pt_surface"
+        app:elevation="0dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_nav" />
+
+</LinearLayout>
