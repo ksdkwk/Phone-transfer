@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  文件备份（SoftAP + TCP）· 第 2 步：新机（接收端）。
+  接入旧机热点 → 选备份目录 → 输入 6 位配对码（必要时填旧机 IP）→ 开始 → SAS 核对 → 进度 → 报告。
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_l"
+        android:paddingTop="@dimen/pt_space_l"
+        android:paddingEnd="@dimen/pt_space_l"
+        android:paddingBottom="@dimen/pt_space_xl">
+
+        <TextView
+            style="@style/PTSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/backup_title" />
+
+        <LinearLayout
+            android:id="@+id/backup_new_tree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l">
+
+            <TextView
+                style="@style/PTRowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backup_pick_tree" />
+
+            <TextView
+                android:id="@+id/backup_new_tree_status"
+                style="@style/PTBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:text="@string/backup_pick_tree_desc" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/PTPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:text="@string/backup_code_label" />
+
+        <EditText
+            android:id="@+id/backup_new_code"
+            style="@style/PTBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:hint="@string/backup_code_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="6" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:text="@string/backup_host_label"
+            android:textColor="@color/pt_text_secondary"
+            android:textSize="@dimen/pt_text_desc" />
+
+        <EditText
+            android:id="@+id/backup_new_host"
+            style="@style/PTBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:hint="@string/backup_host_hint"
+            android:importantForAutofill="no"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/backup_new_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:text="@string/backup_start" />
+
+        <TextView
+            android:id="@+id/backup_new_cancel"
+            style="@style/PTRowTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/pt_space_m"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/pt_space_s"
+            android:text="@string/backup_cancel"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/backup_new_session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/backup_new_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100" />
+
+            <TextView
+                android:id="@+id/backup_new_status"
+                style="@style/PTRowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_m" />
+
+            <TextView
+                android:id="@+id/backup_new_sas"
+                style="@style/PTPageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_m"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/backup_new_sas_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/backup_new_sas_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/backup_confirm_sas" />
+
+                <Button
+                    android:id="@+id/backup_new_sas_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pt_space_s"
+                    android:layout_weight="1"
+                    android:text="@string/backup_reject_sas" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/backup_new_report"
+                style="@style/PTBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

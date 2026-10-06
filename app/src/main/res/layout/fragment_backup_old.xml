@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  文件备份（SoftAP + TCP）· 第 2 步：旧机（发送端）。
+  选文件 → 选热点方式 → 开始（后台服务开热点并等待新机接入）→ SAS 核对 → 进度 → 报告。
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_l"
+        android:paddingTop="@dimen/pt_space_l"
+        android:paddingEnd="@dimen/pt_space_l"
+        android:paddingBottom="@dimen/pt_space_xl">
+
+        <TextView
+            style="@style/PTSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/backup_title" />
+
+        <LinearLayout
+            android:id="@+id/backup_old_files"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l">
+
+            <TextView
+                style="@style/PTRowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backup_pick_files" />
+
+            <TextView
+                android:id="@+id/backup_old_files_status"
+                style="@style/PTBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:text="@string/backup_pick_files_desc" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/PTPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:text="@string/backup_hotspot_mode" />
+
+        <RadioGroup
+            android:id="@+id/backup_old_hotspot_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/backup_old_mode_auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backup_hotspot_auto" />
+
+            <RadioButton
+                android:id="@+id/backup_old_mode_manual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/backup_hotspot_manual" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/backup_old_mode_desc"
+            style="@style/PTBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/backup_hotspot_auto_desc" />
+
+        <Button
+            android:id="@+id/backup_old_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:text="@string/backup_start" />
+
+        <TextView
+            android:id="@+id/backup_old_cancel"
+            style="@style/PTRowTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/pt_space_m"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/pt_space_s"
+            android:text="@string/backup_cancel"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/backup_old_session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/backup_old_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100" />
+
+            <TextView
+                android:id="@+id/backup_old_status"
+                style="@style/PTRowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_m" />
+
+            <TextView
+                android:id="@+id/backup_old_credentials"
+                style="@style/PTBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+
+            <TextView
+                android:id="@+id/backup_old_sas"
+                style="@style/PTPageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_m"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/backup_old_sas_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/backup_old_sas_ok"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/backup_confirm_sas" />
+
+                <Button
+                    android:id="@+id/backup_old_sas_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pt_space_s"
+                    android:layout_weight="1"
+                    android:text="@string/backup_reject_sas" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/backup_old_report"
+                style="@style/PTBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

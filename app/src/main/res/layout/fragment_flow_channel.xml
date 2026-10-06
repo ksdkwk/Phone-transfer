@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_l"
+        android:paddingTop="@dimen/pt_space_l"
+        android:paddingEnd="@dimen/pt_space_l">
+
+        <TextView
+            android:id="@+id/flow_step"
+            style="@style/PTSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/flow_step_channel" />
+
+        <TextView
+            android:id="@+id/flow_mode"
+            style="@style/PTRowDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/PTPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/flow_channel_title" />
+
+        <TextView
+            style="@style/PTBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/flow_channel_hint" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/channel_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/pt_space_l"
+            android:paddingTop="@dimen/pt_space_m"
+            android:paddingEnd="@dimen/pt_space_l"
+            android:paddingBottom="@dimen/pt_space_xl" />
+    </ScrollView>
+</LinearLayout>

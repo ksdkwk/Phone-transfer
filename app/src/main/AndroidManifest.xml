@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- Android 17 / target 37 的局域网 TCP 运行时权限。 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
     <uses-permission
         android:name="android.permission.NEARBY_WIFI_DEVICES"
         android:usesPermissionFlags="neverForLocation"
@@ -66,6 +69,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PhoneTransfer"
         android:usesCleartextTraffic="false">
+
+        <service
+            android:name=".softap.SoftApBackupService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <!--
           启动即主界面：只有一个 Activity，没有闪屏页、没有引导页、没有登录页，

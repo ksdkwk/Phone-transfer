@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PTScreen">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/pt_space_l"
+        android:paddingTop="@dimen/pt_space_l"
+        android:paddingEnd="@dimen/pt_space_l"
+        android:paddingBottom="@dimen/pt_space_xxl">
+
+        <TextView
+            android:id="@+id/flow_step"
+            style="@style/PTSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/flow_step_sas" />
+
+        <TextView
+            android:id="@+id/flow_mode"
+            style="@style/PTRowDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/PTPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/flow_sas_title" />
+
+        <TextView
+            style="@style/PTBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_s"
+            android:text="@string/flow_sas_hint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_l"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/pt_space_l">
+
+            <TextView
+                style="@style/PTRowDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flow_sas_label" />
+
+            <TextView
+                android:id="@+id/sas_digits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pt_space_s"
+                android:letterSpacing="0.25"
+                android:textColor="@color/pt_primary"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sas_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_xl"
+            android:text="@string/flow_sas_ok" />
+
+        <Button
+            android:id="@+id/sas_reject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pt_space_m"
+            android:text="@string/flow_sas_reject" />
+    </LinearLayout>
+</ScrollView>
